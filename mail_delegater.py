@@ -19,14 +19,14 @@ class MailDelegater(object):
         msg_text = MAIL_TEMPLATE.replace("FORM_DATA", json.dumps(req.params,
                                                                      indent=4,
                                                                      sort_keys=True))
-        msg = MIMEText(msg_text)
-        msg['Subject'] = 'Formsubmission from www.nukapi.com'
-        msg['From'] = "formapi@nukapi.com"
-        msg['To'] = "sefidrodi@googlemail.com"
+        # msg = MIMEText(msg_text)
+        # msg['Subject'] = 'Formsubmission from www.nukapi.com'
+        # msg['From'] = "formapi@nukapi.com"
+        # msg['To'] = "sefidrodi@googlemail.com"
 
         logging.warning(msg_text)
 
-        s = smtplib.SMTP( os.environ.get("RELAYHOST", "localhost"))
-        s.send_message(msg)
-        s.quit()
-        logging.warning(MAIL_TEMPLATE.replace("FORM_DATA", req.params))
+        # s = smtplib.SMTP( os.environ.get("RELAYHOST", "localhost"))
+        # s.send_message(msg)
+        # s.quit()
+        # logging.warning(MAIL_TEMPLATE.replace("FORM_DATA", req.params))
