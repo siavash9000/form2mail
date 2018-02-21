@@ -29,4 +29,3 @@ class MailDelegater(object):
         s = smtplib.SMTP( os.environ.get("RELAYHOST", "localhost"))
         s.send_message(msg)
         s.quit()
-        logging.warning(MAIL_TEMPLATE.replace("FORM_DATA", req.params))
