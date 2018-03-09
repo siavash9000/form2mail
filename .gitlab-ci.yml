@@ -25,12 +25,3 @@ build:
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   except:
     - master
-
-trigger_deploy:
-  stage: deploy
-  image: alpine:latest
-  when: manual
-  script:
-    - "apk update"
-    - "apk add curl"
-    - "curl -X POST -F token=a0fe2c54d7b2917988b4c1f618116d -F ref=master https://gitlab.com/api/v4/projects/3620836/trigger/pipeline"
